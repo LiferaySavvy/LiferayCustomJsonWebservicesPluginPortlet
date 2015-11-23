@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.meera.json.service.StudentLocalService" class="com.meera.json.service.impl.StudentLocalServiceImpl" />
+	<bean id="com.meera.json.service.StudentLocalServiceUtil" class="com.meera.json.service.StudentLocalServiceUtil">
+		<property name="service" ref="com.meera.json.service.StudentLocalService" />
+	</bean>
+	<bean id="com.meera.json.service.StudentService" class="com.meera.json.service.impl.StudentServiceImpl" />
+	<bean id="com.meera.json.service.StudentServiceUtil" class="com.meera.json.service.StudentServiceUtil">
+		<property name="service" ref="com.meera.json.service.StudentService" />
+	</bean>
+	<bean id="com.meera.json.service.persistence.StudentPersistence" class="com.meera.json.service.persistence.StudentPersistenceImpl" parent="basePersistence" />
+</beans>
